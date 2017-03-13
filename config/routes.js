@@ -19,6 +19,7 @@ module.exports = function (app, passport) {
 
   /* GET suggestions */
   app.get('/suggest/:input', function (req, res, next) {
+    console.log("SUGGESTER");
     elastic.getSuggestions(req.params.input).then(function (result) { res.json(result) });
   });
 
